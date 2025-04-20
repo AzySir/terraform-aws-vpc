@@ -1,5 +1,5 @@
 region   = "eu-west-2"
-org      = "etsandbox"
+org      = "myorg"
 app      = "threetier"
 env      = "dev"
 vpc_cidr = "10.0.0.0/16"
