@@ -93,7 +93,7 @@ resource "aws_ec2_network_insights_analysis" "private_to_database" {
 
 # Database to Public Paths (Expected to Fail)
 resource "aws_ec2_network_insights_path" "database_to_public" {
-  for_each         = var.availability_zones
+  for_each         = var.enable_vpc_reachability_analyzer ? var.availability_zones : {}
   source           = aws_network_interface.database[each.key].id
   destination      = aws_network_interface.public[each.key].id
   protocol         = "tcp"
